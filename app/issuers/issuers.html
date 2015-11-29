@@ -1,0 +1,31 @@
+<p>
+    <h1>Issuers:</h1>
+    <div>
+        <h3>Json:</h3>        
+        <pre>{{allIssuers.data | json}}</pre>    
+    <div/>
+    <div>
+        <h3>Table:</h3>        
+        <table class="table table-striped table-bordered table-condensed">    
+            <thead>
+                <tr>
+                    <th>code</th>
+                    <th>description</th>
+                    <th>comments</th>        
+                    <th>role</th>
+                    <th>group</th>
+                    <th>email</th>
+                </tr>
+            </thead>
+            <tr ng-repeat="issuer in allIssuers.data">
+                <td>{{issuer.code}}</td>
+                <td>{{issuer.description}}</td>          
+                <td>{{issuer.comments}}</td>
+                <td>{{issuer.roleList[0].subjectRole.id}}</td>
+                <td>{{issuer.isGroup}}</td>
+                <td>{{issuer.email}}</td> 
+            </tr>    
+        </table>
+    </div>
+<p/>    
+<issuer-form></issuer-form>
